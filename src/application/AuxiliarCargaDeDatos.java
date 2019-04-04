@@ -1,11 +1,13 @@
 package application;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 
 public class AuxiliarCargaDeDatos {
 
 	
-	public static void cargarAviones() {
+	public static ArrayList<Avion> cargarAviones() {
 		ArrayList<Avion> aviones = new ArrayList<Avion>();
 		
 		aviones.add(new AvionPasajeros("B65J7", 15000, 300, "Avión Boeing 747", 15000, 416));
@@ -14,9 +16,11 @@ public class AuxiliarCargaDeDatos {
 		aviones.add(new AvionPasajeros("B787RT", 12800, 1500, "Avión Boeing 787", 30000, 323));
 		aviones.add(new AvionPasajeros("B757NH", 9260, 100, "Avión Boeing 757", 12500, 189));
 		aviones.add(new AvionPasajeros("A380PO", 14800, 213, "Avión Airbus A380", 30000, 853));
+		
+		return aviones;
 	}
 	
-	public static void cargarRutas() {
+	public static ArrayList<Ruta> cargarRutas() {
 		ArrayList<Ruta> rutas = new ArrayList<Ruta>();
 		
 		rutas.add(new Ruta(500, "BCN-IBZ-CO", "BCN", "IBZ"));
@@ -27,9 +31,11 @@ public class AuxiliarCargaDeDatos {
 		rutas.add(new Ruta(9800, "LAX-ORY-CO", "LAX", "ORY"));
 		rutas.add(new Ruta(1500, "HAM-IBZ-CO", "HAM", "IBZ"));
 		rutas.add(new Ruta(500, "IBZ-BCN-CO", "IBZ", "BCN"));
+		
+		return rutas;
 	}
 	
-	public static void cargarAeropuertos() {
+	public static ArrayList<Aeropuerto> cargarAeropuertos() {
 		ArrayList<Aeropuerto> aeropuertos = new ArrayList<Aeropuerto>();
 		
 		aeropuertos.add(new Aeropuerto("Hamburgo Airport", "HAM", "Alemania"));
@@ -42,7 +48,16 @@ public class AuxiliarCargaDeDatos {
 		aeropuertos.add(new Aeropuerto("Londres Gatwick Airport", "LGW", "Reino Unido"));
 		aeropuertos.add(new Aeropuerto("Aeropuerto Internacional José Martí", "HAV", "Cuba"));
 		aeropuertos.add(new Aeropuerto("Los Angeles", "LAX", "EEUU"));
-
+		
+		return aeropuertos;
+	}
+	
+	public static ArrayList<VuelosPlanificados> caragarVuelosPlanificados(){
+		ArrayList<VuelosPlanificados> vuelos = new ArrayList<VuelosPlanificados>();
+		
+		vuelos.add(new VuelosPlanificados(LocalDate.of(2019, Month.APRIL, 4), LocalDate.of(2019, Month.APRIL, 4), LocalDate.of(2019, Month.APRIL, 4), "BCN-IBZ-CO"));
+		vuelos.add(new VuelosPlanificados(LocalDate.of(2019, Month.APRIL, 5), LocalDate.of(2019, Month.APRIL, 5), LocalDate.of(2019, Month.APRIL, 5), "IBZ-DVB-CO"));
+		return vuelos;
 	}
 }
 

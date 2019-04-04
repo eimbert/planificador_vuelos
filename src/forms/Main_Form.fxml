@@ -85,15 +85,15 @@
                       <TableColumn fx:id="fx_tableView_Aviones_codigo" prefWidth="75.0" text="Código" />
                       <TableColumn fx:id="fx_tableView_Aviones_autonomia" prefWidth="75.0" text="Autonomía" />
                         <TableColumn fx:id="fx_tableView_Aviones_capacidad" prefWidth="75.0" text="Capacidad" />
-                        <TableColumn fx:id="fx_tableView_Aviones_descripcion" prefWidth="262.0" text="Descripción" />
+                        <TableColumn fx:id="fx_tableView_Aviones_descripcion" prefWidth="294.0" text="Descripción" />
                     </columns>
                   </TableView>
                   <TableView fx:id="fx_tableView_Rutas" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                     <columns>
-                      <TableColumn fx:id="fx_tableView_Rutas_codigo" prefWidth="75.0" text="Código ruta" />
-                      <TableColumn fx:id="fx_tableView_Rutas_airportSalida" prefWidth="127.0" text="Aeropuerto origen" />
-                        <TableColumn fx:id="fx_tableView_Rutas_airportDestino" prefWidth="144.0" text="Aeropuerto destino" />
-                        <TableColumn fx:id="fx_tableView_Rutas_distancia" prefWidth="92.0" text="Distancia" />
+                      <TableColumn fx:id="fx_tableView_Rutas_codigo" prefWidth="93.0" text="Código ruta" />
+                      <TableColumn fx:id="fx_tableView_Rutas_airportSalida" prefWidth="147.0" text="Aeropuerto origen" />
+                        <TableColumn fx:id="fx_tableView_Rutas_airportDestino" prefWidth="146.0" text="Aeropuerto destino" />
+                        <TableColumn fx:id="fx_tableView_Rutas_distancia" prefWidth="135.0" text="Distancia" />
                     </columns>
                   </TableView>
                   <Label text="Rutas disponibles" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
@@ -124,7 +124,7 @@
                         <TableColumn fx:id="fx_tableView_vuelosPlanificados_ruta" prefWidth="122.0" text="Ruta" />
                     </columns>
                      <effect>
-                        <Shadow />
+                        <SepiaTone />
                      </effect>
                   </TableView>
                </children>

@@ -6,29 +6,31 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="978.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="978.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="forms_controlers.FormMainControler">
    <top>
       <HBox>
          <children>
             <GridPane alignment="TOP_CENTER" prefHeight="572.0" prefWidth="527.0" BorderPane.alignment="CENTER">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="575.0" minWidth="10.0" prefWidth="452.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="575.0" minWidth="5.0" prefWidth="5.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="575.0" minWidth="10.0" prefWidth="522.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints maxHeight="185.0" minHeight="0.0" prefHeight="47.0" valignment="CENTER" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="463.0" minHeight="10.0" prefHeight="152.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="417.0" minHeight="0.0" prefHeight="24.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="417.0" minHeight="10.0" prefHeight="147.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="417.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="417.0" minHeight="10.0" prefHeight="175.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="417.0" minHeight="0.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="417.0" minHeight="10.0" prefHeight="127.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="417.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="417.0" minHeight="10.0" prefHeight="137.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="417.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label contentDisplay="CENTER" text="Planificar nueva ruta." GridPane.halignment="CENTER">
+                  <Label contentDisplay="CENTER" text="Planificar nueva ruta." GridPane.columnIndex="1" GridPane.halignment="CENTER">
                      <font>
                         <Font size="21.0" />
                      </font>
                   </Label>
-                  <GridPane GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <GridPane GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -42,12 +44,12 @@
                      <children>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <children>
-                              <RadioButton alignment="BOTTOM_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="17.0" prefWidth="108.0" selected="true" text="Comercial">
+                              <RadioButton fx:id="fx_btn_Comercial" alignment="BOTTOM_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="17.0" prefWidth="108.0" selected="true" text="Comercial">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="tipoVuelo" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton mnemonicParsing="false" text="Mercancias" toggleGroup="$tipoVuelo" />
+                              <RadioButton fx:id="fx_btn_Mercancias" mnemonicParsing="false" text="Mercancias" toggleGroup="$tipoVuelo" />
                            </children>
                         </HBox>
                         <Label text="Selecciona el tipo de vuelo:" GridPane.halignment="RIGHT">
@@ -60,45 +62,50 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <DatePicker GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <DatePicker fx:id="fx_date_Salida" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                         <Label contentDisplay="RIGHT" text="Hora deseada de la salida:" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <TextField maxWidth="76.0" minHeight="20.0" minWidth="20.0" prefHeight="25.0" prefWidth="76.0" promptText="hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                        <TextField fx:id="fx_textBox_hora" maxWidth="76.0" minHeight="20.0" minWidth="20.0" prefHeight="25.0" prefWidth="76.0" promptText="hh:mm" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
                      </children>
                   </GridPane>
-                  <Label text="Aviones disponibles para su selección." GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                  <Label text="Aviones disponibles para su selección." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                  <TableView fx:id="fx_tableView_Aviones" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="Código" />
-                      <TableColumn prefWidth="75.0" text="Autonomía" />
-                        <TableColumn prefWidth="75.0" text="Capacidad" />
-                        <TableColumn prefWidth="262.0" text="Descripción" />
+                      <TableColumn fx:id="fx_tableView_Aviones_codigo" prefWidth="75.0" text="Código" />
+                      <TableColumn fx:id="fx_tableView_Aviones_autonomia" prefWidth="75.0" text="Autonomía" />
+                        <TableColumn fx:id="fx_tableView_Aviones_capacidad" prefWidth="75.0" text="Capacidad" />
+                        <TableColumn fx:id="fx_tableView_Aviones_descripcion" prefWidth="294.0" text="Descripción" />
                     </columns>
                   </TableView>
-                  <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                  <TableView fx:id="fx_tableView_Rutas" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="Código ruta" />
-                      <TableColumn prefWidth="127.0" text="Aeropuerto origen" />
-                        <TableColumn prefWidth="144.0" text="Aeropuerto destino" />
-                        <TableColumn prefWidth="92.0" text="Distancia" />
+                      <TableColumn fx:id="fx_tableView_Rutas_codigo" prefWidth="93.0" text="Código ruta" />
+                      <TableColumn fx:id="fx_tableView_Rutas_airportSalida" prefWidth="147.0" text="Aeropuerto origen" />
+                        <TableColumn fx:id="fx_tableView_Rutas_airportDestino" prefWidth="146.0" text="Aeropuerto destino" />
+                        <TableColumn fx:id="fx_tableView_Rutas_distancia" prefWidth="135.0" text="Distancia" />
                     </columns>
                   </TableView>
-                  <Label text="Rutas disponibles" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                  <Label text="Rutas disponibles" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
+                  <Button fx:id="fx_btn_anadirVuelo" mnemonicParsing="false" text="Añadir el vuelo a la planificación" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
                </children>
             </GridPane>
             <Separator orientation="VERTICAL" prefHeight="200.0" />
@@ -109,15 +116,15 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TableView prefHeight="572.0" prefWidth="445.0">
+                  <TableView fx:id="fx_tableView_vuelosPlanificados" prefHeight="572.0" prefWidth="445.0">
                     <columns>
-                      <TableColumn prefWidth="89.0" text="Salida" />
-                      <TableColumn prefWidth="100.0" text="Llegada" />
-                        <TableColumn prefWidth="131.0" text="Llegada hora destino" />
-                        <TableColumn prefWidth="122.0" text="Ruta" />
+                      <TableColumn fx:id="fx_tableView_vuelosPlanificados_salida" prefWidth="89.0" text="Salida" />
+                      <TableColumn fx:id="fx_tableView_vuelosPlanificados_llegada" prefWidth="100.0" text="Llegada" />
+                        <TableColumn fx:id="fx_tableView_vuelosPlanificados_llegadaLocal" prefWidth="131.0" text="Llegada hora destino" />
+                        <TableColumn fx:id="fx_tableView_vuelosPlanificados_ruta" prefWidth="122.0" text="Ruta" />
                     </columns>
                      <effect>
-                        <Shadow />
+                        <SepiaTone />
                      </effect>
                   </TableView>
                </children>

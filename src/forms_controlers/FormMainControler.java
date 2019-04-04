@@ -11,6 +11,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import application.*;
@@ -30,44 +32,49 @@ public class FormMainControler implements Initializable{
     private Button fx_btn_anadirVuelo;
     //**********************************************************  TableView Vuelos planificados
     @FXML
-    private TableView<?> fx_tableView_vuelosPlanificados;
+    protected TableView<VuelosPlanificados> fx_tableView_vuelosPlanificados;
     @FXML
-    private TableColumn<?, ?> fx_tableView_vuelosPlanificados_ruta;
+    protected TableColumn<VuelosPlanificados, String> fx_tableView_vuelosPlanificados_ruta;
     @FXML
-    private TableColumn<?, ?> fx_tableView_vuelosPlanificados_llegadaLocal;
+    protected TableColumn<VuelosPlanificados, LocalDate> fx_tableView_vuelosPlanificados_llegadaLocal;
     @FXML
-    private TableColumn<?, ?> fx_tableView_vuelosPlanificados_salida;
+    protected TableColumn<VuelosPlanificados, LocalDate> fx_tableView_vuelosPlanificados_salida;
     @FXML
-    private TableColumn<?, ?> fx_tableView_vuelosPlanificados_llegada;
+    protected TableColumn<VuelosPlanificados, LocalDate> fx_tableView_vuelosPlanificados_llegada;
     //**********************************************************  TableView Aviones
     @FXML
-    private TableView<Avion> fx_tableView_Aviones;
+    protected TableView<Avion> fx_tableView_Aviones;
     @FXML
-    private TableColumn<Avion, String> fx_tableView_Aviones_codigo;
+    protected TableColumn<Avion, String> fx_tableView_Aviones_codigo;
     @FXML
-    private TableColumn<Avion, Integer> fx_tableView_Aviones_autonomia;
+    protected TableColumn<Avion, Integer> fx_tableView_Aviones_autonomia;
     @FXML
-    private TableColumn<Avion, Integer> fx_tableView_Aviones_capacidad;
+    protected TableColumn<Avion, Integer> fx_tableView_Aviones_capacidad;
     @FXML
-    private TableColumn<Avion, String> fx_tableView_Aviones_descripcion;
+    protected TableColumn<Avion, String> fx_tableView_Aviones_descripcion;
     //**********************************************************  TableView Rutas
     @FXML
-    private TableColumn<Ruta, Integer> fx_tableView_Rutas_distancia;
+    protected TableColumn<Ruta, Integer> fx_tableView_Rutas_distancia;
     @FXML
-    private TableColumn<Ruta, String> fx_tableView_Rutas_airportDestino;
+    protected TableColumn<Ruta, String> fx_tableView_Rutas_airportDestino;
     @FXML
-    private TableView<Ruta> fx_tableView_Rutas;
+    protected TableView<Ruta> fx_tableView_Rutas;
     @FXML
-    private TableColumn<Ruta, String> fx_tableView_Rutas_airportSalida;
+    protected TableColumn<Ruta, String> fx_tableView_Rutas_airportSalida;
     @FXML
-    private TableColumn<Ruta, String> fx_tableView_Rutas_codigo;
+    protected TableColumn<Ruta, String> fx_tableView_Rutas_codigo;
 	
     
     @Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-    	AuxiliarCargaDeDatos.cargarAeropuertos();
-    	AuxiliarCargaDeDatos.cargarAviones();
-    	AuxiliarCargaDeDatos.cargarRutas();
+    	//ArrayList<Aeropuerto> aeropuertos = AuxiliarCargaDeDatos.cargarAeropuertos();
+    	ArrayList<Avion> aviones = AuxiliarCargaDeDatos.cargarAviones();
+    	ArrayList<Ruta> rutas = AuxiliarCargaDeDatos.cargarRutas();
+    	ArrayList<VuelosPlanificados> vuelos = AuxiliarCargaDeDatos.caragarVuelosPlanificados();
+    	
+    	AuxTabViewAviones.cargarAviones(this, aviones);
+    	AuxTabViewRutas.cargarRutas(this, rutas);
+    	AuxTabViewVuelosPlanificados.cargarVuelosPlanificados(this, vuelos);
 	}
 
 }
