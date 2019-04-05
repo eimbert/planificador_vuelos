@@ -1,5 +1,6 @@
 package forms_controlers;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import application.Ruta;
@@ -21,4 +22,21 @@ public class AuxTabViewRutas {
 
 	}
 	
+	public static String obtenerAeropuertoDestino(FormMainControler parentForm) {
+		Ruta rutaSeleccionada= parentForm.fx_tableView_Rutas.getSelectionModel().getSelectedItem();
+		if(rutaSeleccionada == null) {
+			ControlMensajes.mostrarAlerta("Hay que seleccionar la ruta deseada para comprobar diponibilidades en la fecha.");
+			return null;
+		}else
+			return rutaSeleccionada.getAirportDest();
+	}
+	
+	public static String obtenerRuta(FormMainControler parentForm) {
+		Ruta rutaSeleccionada= parentForm.fx_tableView_Rutas.getSelectionModel().getSelectedItem();
+		if(rutaSeleccionada == null) {
+			ControlMensajes.mostrarAlerta("Hay que seleccionar la ruta deseada para poder planificar los vuelos.");
+			return null;
+		}else
+			return rutaSeleccionada.getCodRuta();
+	}
 }

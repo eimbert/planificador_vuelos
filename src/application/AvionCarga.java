@@ -9,4 +9,10 @@ public class AvionCarga extends Avion {
 		
 		this.capacidadDeCarga = capacidadDeCarga;
 	}
+
+	public int getCapacidadDeCarga() {
+		return capacidadDeCarga;
+	}
+	
+	
 }

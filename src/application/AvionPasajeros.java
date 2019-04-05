@@ -19,4 +19,9 @@ public class AvionPasajeros extends Avion{
 		this.numPasajeros = numPasajeros;
 	}
 
+	public int getNumPasajeros() {
+		return numPasajeros;
+	}
+	
+
 }

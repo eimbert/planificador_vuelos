@@ -1,21 +1,24 @@
 package application;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class VuelosPlanificados {
 	private LocalDate salida;
 	private LocalDate llegada;
 	private LocalDate llegadaLocal;
 	private String codRuta;
+	private String codAvion;
 	
-	public VuelosPlanificados(LocalDate salida, LocalDate llegada, LocalDate llegadaLocal, String codRuta) {
+	public VuelosPlanificados(LocalDate salida, LocalDate llegada, LocalDate llegadaLocal, String codRuta, String codAvion) {
 		super();
 		this.salida = salida;
 		this.llegada = llegada;
 		this.llegadaLocal = llegadaLocal;
 		this.codRuta = codRuta;
+		this.codAvion = codAvion;
 	}
-
+	
 	public LocalDate getSalida() {
 		return salida;
 	}
@@ -47,4 +50,14 @@ public class VuelosPlanificados {
 	public void setCodRuta(String codRuta) {
 		this.codRuta = codRuta;
 	}
+
+	public String getCodAvion() {
+		return codAvion;
+	}
+	
+	public String getAeropuertoDestino(ArrayList<Ruta> r) {
+		r.stream().filter(a -> a.getCodRuta().equals(this.codRuta));
+		return "";
+	}
+	
 }

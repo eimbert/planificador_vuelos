@@ -20,4 +20,12 @@ public class AuxTabViewAviones {
 	
 	}
 
+	public static String obtenerCodAvion(FormMainControler parentForm) {
+		Avion avionSeleccionado= parentForm.fx_tableView_Aviones.getSelectionModel().getSelectedItem();
+		if(avionSeleccionado == null) {
+			ControlMensajes.mostrarAlerta("Hay que seleccionar un avion para poder planificar vuelos.");
+			return null;
+		}else
+			return avionSeleccionado.getCodigoAvion();
+	}
 }

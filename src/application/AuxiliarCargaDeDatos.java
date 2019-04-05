@@ -55,8 +55,9 @@ public class AuxiliarCargaDeDatos {
 	public static ArrayList<VuelosPlanificados> caragarVuelosPlanificados(){
 		ArrayList<VuelosPlanificados> vuelos = new ArrayList<VuelosPlanificados>();
 		
-		vuelos.add(new VuelosPlanificados(LocalDate.of(2019, Month.APRIL, 4), LocalDate.of(2019, Month.APRIL, 4), LocalDate.of(2019, Month.APRIL, 4), "BCN-IBZ-CO"));
-		vuelos.add(new VuelosPlanificados(LocalDate.of(2019, Month.APRIL, 5), LocalDate.of(2019, Month.APRIL, 5), LocalDate.of(2019, Month.APRIL, 5), "IBZ-DVB-CO"));
+		vuelos.add(new VuelosPlanificados(LocalDate.of(2019, Month.APRIL, 6), LocalDate.of(2019, Month.APRIL, 6), LocalDate.of(2019, Month.APRIL, 6), "BCN-IBZ-CO", "A320JS"));
+		vuelos.add(new VuelosPlanificados(LocalDate.of(2019, Month.APRIL, 15), LocalDate.of(2019, Month.APRIL, 15), LocalDate.of(2019, Month.APRIL, 15), "IBZ-BCN-CO", "B757NH"));
+		vuelos.add(new VuelosPlanificados(LocalDate.of(2019, Month.APRIL, 15), LocalDate.of(2019, Month.APRIL, 15), LocalDate.of(2019, Month.APRIL, 15), "LAX-BCN-CO", "A380PO"));
 		return vuelos;
 	}
 }
