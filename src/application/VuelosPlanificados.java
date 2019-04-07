@@ -55,9 +55,4 @@ public class VuelosPlanificados {
 		return codAvion;
 	}
 	
-	public String getAeropuertoDestino(ArrayList<Ruta> r) {
-		r.stream().filter(a -> a.getCodRuta().equals(this.codRuta));
-		return "";
-	}
-	
 }

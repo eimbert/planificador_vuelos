@@ -87,16 +87,29 @@ public class FormMainControler implements Initializable{
     	
     	eventos();
 	}
+    
+    protected String obtenerDestinoDeCodRuta(String codRuta) {
+		for(Ruta r: rutas) {
+			if(r.getCodRuta().equals(codRuta))
+				return r.getAirportDest();
+		}
+		return null;
+	}
 
     private void eventos() {
+    	//***********************************************
+    	//***** Evento cuando cambia el control de fecha*
+    	//***********************************************
     	fx_date_Salida.setOnAction((ActionEvent e) ->{
-    		String aeropuertoDestino;
-    		aeropuertoDestino = AuxTabViewRutas.obtenerAeropuertoDestino(this);
-    		AuxTabViewAviones.cargarAviones(this, AuxTabViewVuelosPlanificados.obtenerAvionesDisponiblesEnFechayLugar(this.fx_date_Salida.getValue(), vuelos, aviones, aeropuertoDestino));
+    		String aeropuertoOrigenRuta = AuxTabViewRutas.obtenerAeropuertoOrigen(this);
+    		AuxTabViewAviones.cargarAviones(this, AuxTabViewVuelosPlanificados.obtenerAvionesDisponiblesEnFechayLugar(this, fx_date_Salida.getValue(), vuelos, aviones, aeropuertoOrigenRuta));
     	});
-    	
+    	//***************************************
+    	//***** Evento al pulsar el boton añadir*
+    	//***************************************
     	fx_btn_anadirVuelo.setOnMouseClicked((MouseEvent e) ->{
     		String codRuta = AuxTabViewRutas.obtenerRuta(this);
+    		
     		String codAvion = AuxTabViewAviones.obtenerCodAvion(this);
     		LocalDate fechaSalida= this.fx_date_Salida.getValue();
     		

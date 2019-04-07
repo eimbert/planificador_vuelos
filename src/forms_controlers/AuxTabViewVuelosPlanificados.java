@@ -25,10 +25,10 @@ public class AuxTabViewVuelosPlanificados {
 	
 	}
 	
-	public static ArrayList<Avion> obtenerAvionesDisponiblesEnFechayLugar(LocalDate fecha, ArrayList<VuelosPlanificados> vuelosPlanificados, ArrayList<Avion> aviones, String codAeropuerto){
+	public static ArrayList<Avion> obtenerAvionesDisponiblesEnFechayLugar(FormMainControler parentForm, LocalDate fecha, ArrayList<VuelosPlanificados> vuelosPlanificados, ArrayList<Avion> aviones, String codAeropuerto){
 		ArrayList<Avion> avionesDisponbles = new ArrayList<Avion>();
 		for(VuelosPlanificados vp: vuelosPlanificados) {
-			if(fecha.equals(vp.getLlegadaLocal())) {
+			if(fecha.equals(vp.getLlegadaLocal()) && parentForm.obtenerDestinoDeCodRuta(vp.getCodRuta()).equals(codAeropuerto)) {
 				avionesDisponbles.addAll(aviones.stream().filter(a -> a.getCodigoAvion().equals(vp.getCodAvion())).collect(Collectors.toList()));
 			}
 		}
@@ -36,4 +36,7 @@ public class AuxTabViewVuelosPlanificados {
 			ControlMensajes.mostrarAlerta("No hay aviones disponibles en el aeropuerto en fecha escogida.");
 		return avionesDisponbles;
 	}
+	
+	
+	
 }

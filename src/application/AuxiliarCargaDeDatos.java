@@ -26,7 +26,7 @@ public class AuxiliarCargaDeDatos {
 		rutas.add(new Ruta(500, "BCN-IBZ-CO", "BCN", "IBZ"));
 		rutas.add(new Ruta(2675, "IBZ-DVB-CO", "IBZ", "DVB"));
 		rutas.add(new Ruta(2500, "ORI-LGW-CO", "ORI", "LGW"));
-		rutas.add(new Ruta(9622, "LAX-BCN-CO", "BCN", "LAX"));
+		rutas.add(new Ruta(9622, "LAX-BCN-CO", "LAX", "BCN"));
 		rutas.add(new Ruta(10000, "GRZ-LAX-CO", "GRZ", "LAX"));
 		rutas.add(new Ruta(9800, "LAX-ORY-CO", "LAX", "ORY"));
 		rutas.add(new Ruta(1500, "HAM-IBZ-CO", "HAM", "IBZ"));
